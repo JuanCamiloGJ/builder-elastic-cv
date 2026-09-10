@@ -4,7 +4,7 @@ set -eu
 PDF="${1:-}"
 FIXTURE="${2:-tests/required-sections-english.txt}"
 if [ -z "$PDF" ] || [ ! -f "$PDF" ]; then
-  echo "ERROR: provide an existing PDF path, for example tests/validate-text.sh build/english.pdf tests/required-sections-english.txt." >&2
+  echo "ERROR: provide an existing PDF path, for example tests/validate-text.sh build/_CV_Juan_Camilo_Garcia_Jimenez_english.pdf tests/required-sections-english.txt." >&2
   exit 1
 fi
 command -v pdftotext >/dev/null 2>&1 || { echo "ERROR: pdftotext is required." >&2; exit 1; }

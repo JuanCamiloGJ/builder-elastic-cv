@@ -2,6 +2,7 @@ SHELL := /bin/sh
 
 VARIANTS := spanish english
 BUILD_DIR := build
+PDF_PREFIX := _CV_Juan_Camilo_Garcia_Jimenez_
 
 COMPOSE := docker compose
 DOCKER_IMAGE := builder-elastic-cv:bookworm
@@ -19,16 +20,17 @@ build: check-dependencies
 	@if [ "$(VARIANT)" != "" ]; then \
 		case "$(VARIANT)" in spanish|english) ;; *) echo "ERROR: unknown VARIANT='$(VARIANT)'. Use spanish or english." >&2; exit 1 ;; esac; \
 		echo "Building $(VARIANT)..."; \
-		latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=$(BUILD_DIR) -jobname=$(VARIANT) variants/$(VARIANT).tex; \
+		latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=$(BUILD_DIR) -jobname=$(PDF_PREFIX)$(VARIANT) variants/$(VARIANT).tex; \
 	else \
-		for variant in $(VARIANTS); do echo "Building $$variant..."; latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=$(BUILD_DIR) -jobname=$$variant variants/$$variant.tex || exit $$?; done; \
+		for variant in $(VARIANTS); do echo "Building $$variant..."; latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=$(BUILD_DIR) -jobname=$(PDF_PREFIX)$$variant variants/$$variant.tex || exit $$?; done; \
 	fi
 
 validate:
 	@command -v pdftotext >/dev/null 2>&1 || { echo "ERROR: pdftotext is required for ATS text validation." >&2; exit 1; }
 	@for variant in $(if $(VARIANT),$(VARIANT),$(VARIANTS)); do \
-		test -f $(BUILD_DIR)/$$variant.pdf || { echo "ERROR: missing $(BUILD_DIR)/$$variant.pdf. Run 'make build'." >&2; exit 1; }; \
-		tests/validate-text.sh $(BUILD_DIR)/$$variant.pdf tests/required-sections-$$variant.txt || exit $$?; \
+		pdf=$(BUILD_DIR)/$(PDF_PREFIX)$$variant.pdf; \
+		test -f "$$pdf" || { echo "ERROR: missing $$pdf. Run 'make build'." >&2; exit 1; }; \
+		tests/validate-text.sh "$$pdf" tests/required-sections-$$variant.txt || exit $$?; \
 	done
 
 clean:

@@ -11,7 +11,7 @@ are localized projections; `build/` contains generated PDFs.
 - `src/layouts/` and `src/main.tex` provide shared macros, theme, and assembly.
 - `variants/spanish.tex` and `variants/english.tex` are the two thin base entrypoints.
 - `compose.yaml` defines the mounted Docker build service and its image tag.
-- Local and Docker builds generate `build/spanish.pdf` and `build/english.pdf`.
+- Local and Docker builds generate `build/_CV_Juan_Camilo_Garcia_Jimenez_spanish.pdf` and `build/_CV_Juan_Camilo_Garcia_Jimenez_english.pdf`.
 
 LaTeX was chosen for deterministic, version-controlled layout, precise
 typography, reusable shared macros, and selectable/extractable text that can be
@@ -42,6 +42,31 @@ docker compose run --rm cv
 The same `make docker-all` command works from Git Bash, WSL, or another
 environment that provides `make`. Enable Docker Desktop file sharing for the
 repository drive. All paths leave PDFs in the host `build/` directory.
+
+## LLM harness onboarding
+
+Before project work, LLM agents using Codex, Pi, Claude Code, OpenCode, or
+another harness must install or register this repository's relevant skills and
+load them through that harness's native mechanism. The repository source
+location for these skills is `.opencode/skills/`; harnesses do not necessarily
+install or register that directory in the same way.
+
+Quick checklist:
+
+- [ ] Discover and install/register the skills from `.opencode/skills/` using the harness-native mechanism.
+- [ ] Load the relevant skill before editing or generating CV content.
+- [ ] If the harness cannot use a skill, report that limitation and do not silently proceed.
+
+Current skills:
+
+- `cv-vacancy-tailor` — load when tailoring the CV to a vacancy or job description.
+- `cv-new-base-profile` — load when explicitly replacing the complete canonical CV profile for a new user.
+
+Choose the workflow from the user's intent before editing:
+
+- For a new user or an explicit complete profile replacement, use `cv-new-base-profile` and do not retain facts from the previous profile.
+- For an existing user's vacancy adaptation, use `cv-vacancy-tailor` and preserve the canonical evidence in `data/cv-memory.json`.
+- If the user's intent is unclear, ask before selecting a skill or changing the profile.
 
 ## Docker lifecycle
 
@@ -80,7 +105,7 @@ skill so its instructions reload.
 The local build fails with an explicit dependency message when `latexmk`,
 `pdflatex`, or `pdftotext` is unavailable. If Docker is unavailable, install a
 standard TeX distribution plus Poppler (`pdftotext`) on the host, then use
-`make all`. Local PDFs also go to `build/`.
+`make all`. Local PDFs also go to `build/` with the `_CV_Juan_Camilo_Garcia_Jimenez_<language>.pdf` naming convention.
 
 ## Vacancy tailoring
 

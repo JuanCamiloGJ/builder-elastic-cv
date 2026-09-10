@@ -24,7 +24,7 @@ make build
 make validate
 make build VARIANT=spanish|english
 make clean
-tests/validate-text.sh build/english.pdf tests/required-sections-english.txt
+tests/validate-text.sh build/_CV_Juan_Camilo_Garcia_Jimenez_english.pdf tests/required-sections-english.txt
 make docker-all
 ```
 
@@ -32,7 +32,7 @@ make docker-all
 
 ## Build locations
 
-- Local `Makefile` output is written to `build/`.
+- Local `Makefile` output is written to `build/_CV_Juan_Camilo_Garcia_Jimenez_<language>.pdf`.
 - CI builds both language variants with `xu-cheng/latex-action@v3`, explicitly disables XeLaTeX, and validates PDFs emitted under `variants/*.pdf`.
 - Do not confuse the local `build/` PDFs with the CI `variants/*.pdf` PDFs.
 
@@ -46,6 +46,14 @@ make docker-all
 - `make docker-all` reuses `builder-elastic-cv:bookworm` when present and builds it only when absent; run `make docker-build` to explicitly rebuild after Dockerfile or toolchain dependency changes.
 - The repository is mounted at `/workspace`, so generated PDFs remain in the host `build/` directory. `compose.yaml` is portable across Docker Desktop and Linux/macOS.
 - After changing the project skill, quit and restart OpenCode so it reloads the instructions.
+
+## Mandatory skill onboarding
+
+- Before project work, discover and install/register the relevant repository skills using the active harness's native mechanism; do not assume every harness handles `.opencode/skills/` identically.
+- Load the relevant skill before editing or generating CV content.
+- Determine the user's profile intent first: use `cv-new-base-profile` for a new user or explicit complete profile replacement; use `cv-vacancy-tailor` for an existing user's vacancy adaptation. Never reuse facts from a previous profile in the new-user workflow.
+- If profile intent is unclear, ask before selecting a skill or changing profile data.
+- If a skill is unavailable or incompatible with the harness, report the limitation and do not silently proceed.
 
 ## Project skills
 
