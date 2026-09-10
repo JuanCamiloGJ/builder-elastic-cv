@@ -4,7 +4,7 @@
   "base_profile": {
     "name": { "value": "JUAN CAMILO GARCÍA JIMÉNEZ", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-name"] },
     "headline": { "value": "SYSTEMS ENGINEER | JAVA BACKEND DEVELOPER", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-headline"] },
-    "summary": { "value": "Systems Engineer with 4 years of experience in Java backend development and the Spring ecosystem; microservice design and implementation, clean architecture, and reactive programming with WebFlux; efficiency, scalability, and maintainability. Technical reference who coordinates solutions and develops leadership. Observability with OpenTelemetry, Prometheus, Grafana, and Loki; Docker and Kubernetes. Security with Spring Security, JWT, and Redis; automation with Spring Batch; CI/CD pipelines.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-summary"] }
+    "summary": { "value": "Systems Engineer with 5 years of experience delivering Java and Spring Boot backend solutions in banking environments, including reactive WebFlux microservices and clean architecture. Brings technical leadership and collaborative delivery through Jenkins CI/CD, Docker and Kubernetes deployment, and observability practices that support reliable, maintainable systems.", "status": "confirmed", "source": "user-provided CV PDF and explicit user correction", "confidence": 1.0, "evidence_ids": ["pdf-summary", "user-confirmed-5-years", "user-keppri-confirmations"] }
   },
   "contact": {
     "email": { "value": "juancamilogjnt@gmail.com", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-contact"] },
@@ -24,7 +24,7 @@
     { "value": "Spring Security", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
     { "value": "Spring AMQP", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
     { "value": "Spring Boot", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
-    { "value": "React", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "React", "status": "confirmed", "source": "user-provided CV PDF and user-confirmed clarification", "confidence": 1.0, "evidence_ids": ["pdf-skills", "user-keppri-confirmations"], "notes": "Basic/formative experience: incomplete course and simple components; no complete application." },
     { "value": "Oracle", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
     { "value": "Redis", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
     { "value": "PostgreSQL", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
@@ -41,7 +41,10 @@
     { "value": "REST APIs", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
     { "value": "JWT", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
     { "value": "Scrum", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
-    { "value": "Kanban", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] }
+    { "value": "Kanban", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "Jenkins", "status": "confirmed", "source": "user-confirmed vacancy details", "confidence": 1.0, "evidence_ids": ["user-keppri-confirmations"], "notes": "Created pipelines to compile Java projects and deploy them to a cluster." },
+    { "value": "Git", "status": "confirmed", "source": "user-confirmed vacancy details", "confidence": 1.0, "evidence_ids": ["user-keppri-confirmations"], "notes": "Used daily." },
+    { "value": "GitFlow", "status": "confirmed", "source": "user-confirmed vacancy details", "confidence": 1.0, "evidence_ids": ["user-keppri-confirmations"], "notes": "Applied formally." }
   ],
   "experience": [
     { "title": { "value": "Java Backend Developer (Systems Analyst)", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] }, "dates": { "value": "Nov. 2023 -- Present", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] }, "employer": { "value": "Smart Financial S.A.S.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] }, "location": { "value": "Cali", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] }, "responsibilities": [
@@ -51,7 +54,9 @@
       { "value": "JWT security with automatic signature rotation and Redis sessions.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] },
       { "value": "OpenTelemetry in microservices and the gateway.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] },
       { "value": "Spring Batch for critical processes.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] },
-      { "value": "CI/CD pipelines.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] },
+       { "value": "CI/CD pipelines.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] },
+       { "value": "Created Jenkins pipelines to compile Java projects and deploy them to a cluster.", "status": "confirmed", "source": "user-confirmed vacancy details", "confidence": 1.0, "evidence_ids": ["user-keppri-confirmations"] },
+       { "value": "Used Git daily and applied formal GitFlow.", "status": "confirmed", "source": "user-confirmed vacancy details", "confidence": 1.0, "evidence_ids": ["user-keppri-confirmations"] },
       { "value": "Technical reference proposing architecture and good practices.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] },
       { "value": "Kubernetes (pods, deployments, manifests, nodes).", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] }
     ] },
@@ -84,10 +89,11 @@
     { "id": "pdf-skills", "source": "user-provided CV PDF", "excerpt": "Technical Skills: Java, Spring, databases, Docker, Kubernetes, observability, microservices, RabbitMQ, REST APIs, JWT, Scrum, Kanban.", "supports": ["skills"] },
     { "id": "pdf-edu", "source": "user-provided CV PDF", "excerpt": "Education section with four entries.", "supports": ["education"] },
     { "id": "pdf-certifications", "source": "user-provided CV PDF", "excerpt": "Two certifications listed with UdeM and dates.", "supports": ["certifications_courses"] },
-    { "id": "pdf-languages", "source": "user-provided CV PDF", "excerpt": "English — A2", "supports": ["languages"] }
+    { "id": "pdf-languages", "source": "user-provided CV PDF", "excerpt": "English — A2", "supports": ["languages"] },
+    { "id": "user-keppri-confirmations", "source": "User-confirmed vacancy details", "excerpt": "Jenkins pipelines compile Java projects and deploy them to a cluster; Git is used daily with formal GitFlow; React experience is basic/formative, from an incomplete course and simple components, with no complete application.", "supports": ["base_profile.summary", "skills", "experience[0].responsibilities"] },
+    { "id": "user-confirmed-5-years", "source": "Explicit user correction", "excerpt": "Professional experience is confirmed by the user as 5 years; do not replace it with date arithmetic.", "supports": ["base_profile.summary"] }
   ],
   "open_questions": [
-    { "question": "Which CI/CD platform or tools did you use, and in what project context?", "status": "unknown", "reason": "The PDF confirms CI/CD pipelines but gives no platform or context." },
     { "question": "For each listed technology, what was your depth (daily use, implementation, maintenance, or exposure) and most recent use?", "status": "unknown", "reason": "The PDF lists technologies but does not establish depth or recency for each one." },
     { "question": "Which concrete outcomes can you document for your projects without estimating metrics?", "status": "unknown", "reason": "The PDF describes outcomes qualitatively and provides no verified metrics." }
   ]
