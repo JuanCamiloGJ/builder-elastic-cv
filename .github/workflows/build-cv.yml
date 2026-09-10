@@ -15,7 +15,6 @@ jobs:
             variants/spanish.tex
             variants/english.tex
           working_directory: .
-          work_in_root_file_dir: true
           latexmk_use_xelatex: false
       - name: Install pdftotext
         run: sudo apt-get update && sudo apt-get install -y poppler-utils
@@ -23,5 +22,5 @@ jobs:
         run: |
           command -v pdftotext
           for variant in spanish english; do
-            tests/validate-text.sh "variants/${variant}.pdf" "tests/required-sections-${variant}.txt"
+            tests/validate-text.sh "${variant}.pdf" "tests/required-sections-${variant}.txt"
           done
