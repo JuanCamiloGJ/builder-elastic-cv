@@ -12,11 +12,19 @@ Activate for vacancy analysis, recruiter screening, ATS matching, or CV adaptati
 
 ## Hard Rules
 Load `data/cv-memory.json` first and treat it as the canonical, durable source of candidate facts. LaTeX files are generated projections, never the memory source; do not reconstruct future applications from LaTeX alone. Never infer adjacent-technology experience, fabricate facts, metrics, dates, titles, certifications, language levels, or keywords. Mark every vacancy item `confirmed`, `partially supported`, `unknown`, or `contradicted`. Add facts only after explicit confirmation, with provenance and confidence. Keep unknowns visible.
+When information is missing or clarification is needed, use the native interactive question tool. Present answer choices when useful, enable multiple selection when more than one answer may apply, and always allow custom text so the user can provide an answer not covered by the choices. Ask only one question at a time and preserve the user's exact free-text answer for confirmation before adding it to canonical memory.
 
 ## Decision Gates
-- High-value unknown/partial: ask one short, prioritized questionnaire covering technology, context, recency, depth, and outcome.
+- High-value unknown/partial: ask one short, prioritized interactive question at a time, covering technology, context, recency, depth, and outcome as needed.
 - No useful gap: do not ask questions already answered in memory.
 - Editing requested: report fit and obtain approval unless the user explicitly requests generation.
+
+| Need | Interactive question behavior |
+| --- | --- |
+| One valid answer | Single-select choices plus custom text. |
+| Several valid answers | Multi-select choices plus custom text. |
+| No reliable choices | Open custom-text question. |
+| Custom answer supplied | Confirm its meaning and evidence before saving; never infer unsupported facts. |
 
 ## Execution Steps
 1. Parse the vacancy into requirements and evidence tests.
