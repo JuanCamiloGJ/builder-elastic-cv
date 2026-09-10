@@ -1,67 +1,72 @@
 ---
 name: cv-vacancy-tailor
-description: "Trigger: vacancy, job description, tailor CV, adapt CV, recruiter, ATS matching, fit a vacancy. Evaluate fit from verified CV evidence and plan truthful tailoring."
+description: "Trigger: vacancy, job description, tailor CV, adapt CV, recruiter, ATS matching, fit a vacancy. Transform verified candidate evidence into a truthful, targeted CV."
 license: Apache-2.0
 metadata:
   author: "Juan Camilo García Jiménez"
-  version: "1.0"
+  version: "1.1"
 ---
 
 ## Activation Contract
-Activate for vacancy analysis, recruiter screening, ATS matching, or CV adaptation requests.
+Activate for vacancy analysis, recruiter screening, ATS matching, or CV adaptation.
 
 ## Hard Rules
-Load `data/cv-memory.json` once first and treat it as the complete canonical, durable fact store, not content that must all appear in every CV. LaTeX files are generated projections, never the memory source; do not reconstruct future applications from LaTeX alone. Compute the current vacancy's relevance set before drafting and exclude stale or low-relevance material from this projection without deleting it from canonical memory. Never infer adjacent-technology experience, fabricate facts, metrics, dates, titles, certifications, language levels, or keywords. Mark every vacancy item `confirmed`, `partially supported`, `unknown`, or `contradicted`. Add only newly confirmed durable facts once, with stable provenance and confidence; never append vacancy keywords or duplicate responsibilities merely because they match, and keep vacancy-specific wording/selection ephemeral unless persistence is explicitly requested. Keep unknowns and meaningful omissions visible.
-When information is missing, use the native interactive question tool with useful single-select or multi-select choices as applicable, always with custom text. Ask one question at a time and preserve exact free-text answers for confirmation before saving.
-Write strategically, not as a keyword list. Make the summary a candidate-focused value proposition with identity, experience, domain/context, value, and strengths; use 45–70 words, at most 2 sentences, no keyword chains, and no weak/basic skills. Build each responsibility's evidence card with action, context/problem, solution, technologies, outcome/purpose, scope, ownership, recency, provenance, and confidence; cross-link it to relevant memory records. Write bullets as action + context/problem + solution + technology + outcome/purpose. Contextualize ATS terms, vary repetition, distinguish `implemented`, `led`, `maintained`, `participated`, and `exposed`, never infer ownership/outcomes, and reject nominal fragments or standalone technology lists.
-If a verified metric is unavailable, use only a verified qualitative purpose and keep the unknown visible. Apply the narrative-quality gate to every summary and professional bullet for candidate focus, readability, naturalness, no keyword dumping, and bilingual factual parity. Keep claims deterministic (0.2–0.35), prose at 0.45–0.60, and alternatives at no more than 0.65; wording may change, evidence may not.
+- Load `data/cv-memory.json` once first. It is the complete canonical fact store; LaTeX is only a generated projection.
+- Classify every vacancy requirement as `confirmed`, `partially supported`, `unknown`, or `contradicted`. Never infer adjacent experience, metrics, dates, titles, certifications, language levels, ownership, production scope, or keywords.
+- Treat a confirmed conversational explanation tied to real project work as professional evidence. The user need not phrase it like a CV; transform it yourself.
+- Keep canonical memory complete, but project only the current vacancy's ranked relevance set. Never append vacancy keywords or retain stale material merely because it appeared in an earlier CV. Keep meaningful omissions visible.
+- Add durable facts only after explicit confirmation, with provenance and confidence. Vacancy-specific wording and selection remain ephemeral unless persistence is requested.
 
-## Value Communication Gate
-Before projection, require every summary, skill grouping, and experience bullet to translate verified evidence into: **professional capability + context/problem + action/solution + technology as supporting evidence + verified outcome or qualitative purpose**. The capability is the message; tools are evidence. Reject keyword dumps, literal vacancy/user wording, and tool inventories. Present user-facing capabilities (for example, automation, delivery, analysis, or collaboration) rather than internal implementation details. Generalize OpenCode, Engram, Gentle AI, SDD, and project-specific skills into professional language unless the named tool is itself a verified ATS-relevant requirement or necessary evidence; retain it only when its presence is truthful and useful, never as the value claim. If any element is unsupported, keep it unknown, ask the highest-value question, or omit the item. Example: `Python, OpenCode, SDD, automation` → `Automated [verified workflow] to address [verified problem], using Python and documented delivery practices to support [verified outcome/purpose].`
-Apply the same gate during narrative-quality review and again when assembling the ranked two-page projection; a technically accurate item still fails if its candidate value is not clear.
+## Mandatory Evidence-to-Value Transformation
+Transform every selected fact before writing:
+
+`raw account -> professional capability -> project context/problem -> candidate action/solution -> supporting technology -> verified outcome or qualitative purpose`
+
+The capability is the message and must be the grammatical subject and first meaningful idea. Technologies are supporting evidence. Preserve the full confirmed capability while improving its wording; do not reduce it to a tool inventory or require the user to rewrite it.
+
+For AI-assisted engineering, state what the candidate enabled or improved in software delivery first, then explain how LLMs, MCPs, subagents, persistent context, orchestration, or structured workflows supported it. “Across project work” is valid when confirmed, but do not upgrade it to a production system, business impact, scale, or integration absent from memory. A missing metric may use only a confirmed qualitative purpose such as structured or maintainable delivery.
+
+## Projection Quality Gate
+Apply this gate to the summary, every skill grouping, and every professional bullet:
+
+`capability + context/problem + action/solution + technology as evidence + outcome/purpose`
+
+- Summary: 45–70 words, maximum two sentences, candidate-focused, no keyword chain or weak/basic skill.
+- Professional profile/summary: lead with candidate capability and value; do not enumerate implementation tools or internal workflow names. Name detailed tools only in a relevant experience bullet or a capability-grouped skills line when they support a meaningful claim.
+- Experience bullet: action + context/problem + solution + technology + outcome/purpose. Vary `implemented`, `led`, `maintained`, `participated`, and `exposed` according to evidence.
+- Skills: group technologies only when the grouping communicates a capability or practice; never create a standalone inventory for a targeted value claim.
+- Reject literal vacancy wording, nominal fragments, generic value claims, and any sentence that fails the remove-the-tools test: removing tool names must leave a meaningful capability, context, action, or purpose.
+- A named ATS-relevant tool may remain only inside a capability statement, never as the statement's value.
+- If a gate fails, rewrite from canonical evidence, ask only for genuinely missing evidence, or omit the item. Never project failed wording.
 
 ## Decision Gates
-- Missing narrative field: identify the weakest/highest-value responsibility and ask one targeted interactive question at a time; do not use a generic questionnaire when a targeted question is possible. Cover technology, context, recency, depth, ownership, or outcome only as needed.
-- No useful gap: do not ask questions already answered in memory.
-- Editing requested: report fit and obtain approval unless the user explicitly requests generation.
-
-| Evidence card state | Required action |
+| Evidence state | Action |
 | --- | --- |
-| Complete | Draft only through the action + context/problem + solution + technology + outcome/purpose gate. |
-| Partial | Ask the single highest-value targeted question; keep unknowns visible and do not project until the bullet gate passes. |
-| Insufficient | Do not draft the bullet; report the gap or retain a truthful minimal responsibility without invented narrative. |
+| Complete | Draft only after the transformation and quality gates pass. |
+| Partial | Ask one highest-value targeted question; do not invent the missing field. |
+| Insufficient | Omit the bullet or retain only a truthful minimal responsibility. |
+| Confirmed practice but list-like wording | Rewrite capability-first; never project the list. |
+| Capability, context, and action confirmed but outcome unmeasured | Use the verified qualitative purpose. |
 
-| Need | Interactive question behavior |
-| --- | --- |
-| One valid answer | Single-select choices plus custom text. |
-| Several valid answers | Multi-select choices plus custom text. |
-| No reliable choices | Open custom-text question. |
-| Custom answer supplied | Confirm its meaning and evidence before saving; never infer unsupported facts. |
+When clarification is needed, use the native question tool with custom text, ask one question at a time, and preserve free-text answers for confirmation before saving. Do not ask questions already answered in memory. For editing, obtain approval unless generation was explicitly requested.
 
-| Selection decision | Runtime action |
-| --- | --- |
-| Include | Project verified, high-signal material in the current relevance set. |
-| Condense | Combine overlapping verified facts while preserving the strongest evidence and purpose. |
-| Omit from projection | Exclude stale/low-relevance material this vacancy does not need; never delete its canonical fact. |
-| Ask | Ask only when the missing fact is the single highest-value unresolved gap. |
-
-Before projection, build a ranked content budget for the summary, skills, and each employer's bullets. Rank by direct vacancy relevance, evidence strength, recency, distinctiveness, and outcome/value; penalize duplicates, generic duties, standalone tools, and low-signal details. If content exceeds two pages, prune in this order: duplicate/standalone skills, low-relevance skills, generic or overlapping bullets, older low-relevance bullets, then summary detail. Never remove contact, employer/title/dates, education, language, or high-evidence/high-relevance facts; preserve at least the strongest evidence per employer. Never silently delete canonical facts: report meaningful omissions.
+## Selection and Two-Page Budget
+Rank content by direct vacancy relevance, evidence strength, recency, distinctiveness, and value. Penalize duplicate, generic, stale, low-signal, and standalone-tool content. If over two pages, prune once in this order: standalone/duplicate skills, low-relevance skills, generic or overlapping bullets, older low-relevance bullets, then summary detail. Never remove contact, employer/title/dates, education, language, or the strongest evidence per employer. Do not delete canonical facts.
 
 ## Execution Steps
-1. Load canonical memory once; parse the new vacancy once into requirements and evidence tests, reusing existing evidence IDs, stable cross-links, and the cached fact inventory.
-2. Compare only the vacancy delta against that inventory, classify every requirement, and compute the ranked relevance set and content budget. Do not re-ask answered questions or reprocess unrelated technologies/employers.
-3. For each selected professional responsibility, cross-link its evidence card, detect missing narrative fields, and ask at most the single highest-value missing question per interaction round. When metrics are unavailable, use already verified qualitative purposes.
-4. Return fit summary, matches, gaps, questions, and a truthful adaptation plan; obtain approval for editing unless generation was explicitly requested.
-5. After answers, merge only confirmed durable facts and provenance into `data/cv-memory.json`; retain vacancy-specific selection and wording only in the current projection.
-6. Apply the value-communication, bullet, and narrative-quality gates, then project only the ranked relevant selection into both language directories; if any gate fails, do not project. Preserve factual parity and the ATS-safe one-column layout (no photo, icons, tables, or graphics).
-7. If over two pages, perform one bounded pruning pass using the stated order, re-render, and verify extracted text and page count. Do not shrink layout as a substitute for selection. If still over two pages, report the overflow and exact items considered.
-8. Avoid intermediate builds: edit both projections, then run one final `make docker-all` (or the documented host fallback) build/validation pass. Use `make build VARIANT=...` only for targeted troubleshooting. Report timing by load/match/question/projection/build phase and identify external/build bottlenecks.
-9. Report the updated memory, changed LaTeX paths, meaningful omissions, verification result, generated variant(s), and any overflow.
+1. Load canonical memory once and parse the vacancy once into requirements and evidence tests.
+2. Match requirements, classify evidence, compute the relevance set, and build the content budget.
+3. Build evidence cards for selected responsibilities with action, context/problem, solution, technologies, outcome/purpose, scope, ownership, recency, provenance, confidence, and memory links.
+4. Ask only the highest-value missing question when a selected claim cannot pass the gates; otherwise transform confirmed evidence directly.
+5. Merge only newly confirmed durable facts into `data/cv-memory.json`.
+6. Apply the mandatory transformation, remove-the-tools test, quality gate, and bilingual-parity check; project only passing content into both language directories.
+7. If needed, perform one bounded relevance-pruning pass. Then run one final `make docker-all` (or documented host fallback), inspect both PDFs with `pdftotext`, verify page count, and run repository text validation. Use targeted builds only for troubleshooting.
+8. Report fit, gaps, questions, meaningful omissions, changed paths, generated PDFs, timing, verification, and overflow.
 
 ## Output Contract
-Return the classified requirement matrix, concise questionnaire (if needed), and adaptation plan before LaTeX edits; afterwards report the updated canonical memory, changed projections, meaningful omissions, timing by phase, verification result, generated variants, and any overflow.
+Return the classified requirement matrix, fit summary, gaps, questions, and adaptation plan before edits when approval is required. After edits, return status, updated memory, changed projections, meaningful omissions, timing by phase, verification result, generated variants, and overflow.
 
 ## References
-- `../../../data/cv-memory.json` — base evidence memory.
-- `assets/cv-memory.schema.json` — memory validation schema.
-- `../../../AGENTS.md` — CV source and publishing conventions.
+- `../../../data/cv-memory.json` — canonical candidate evidence.
+- `assets/cv-memory.schema.json` — memory schema.
+- `../../../AGENTS.md` — project conventions.
