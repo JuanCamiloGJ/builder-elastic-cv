@@ -50,3 +50,4 @@ make docker-all
 ## Project skills
 
 - `.opencode/skills/cv-vacancy-tailor/SKILL.md` — evidence-based vacancy matching and truthful CV tailoring; its base memory is `data/cv-memory.json`.
+- `.opencode/skills/cv-new-base-profile/SKILL.md` — exclusively replaces the complete canonical CV memory for an explicitly requested new user profile, then projects both localized variants after approval.
