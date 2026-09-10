@@ -1,0 +1,10 @@
+services:
+  cv:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: builder-elastic-cv:bookworm
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    command: ["make", "all"]

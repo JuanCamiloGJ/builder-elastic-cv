@@ -1,0 +1,18 @@
+# The image contains tools only; source is supplied by the runtime bind mount.
+.git
+.gitignore
+.dockerignore
+build/
+*.aux
+*.bcf
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+.DS_Store
+*.swp
+*.swo
+.atl/

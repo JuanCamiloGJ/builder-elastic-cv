@@ -1,0 +1,24 @@
+name: Build CV
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            variants/spanish.tex
+            variants/english.tex
+          working_directory: .
+          latexmk_use_xelatex: false
+      - name: Validate extracted PDF text
+        run: |
+          command -v pdftotext
+          for variant in spanish english; do
+            tests/validate-text.sh "variants/${variant}.pdf" "tests/required-sections-${variant}.txt"
+          done

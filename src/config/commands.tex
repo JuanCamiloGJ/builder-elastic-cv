@@ -1,0 +1,15 @@
+\newcommand{\CVSection}[1]{%
+  \par
+  \vspace{12pt}%
+  {\large\bfseries\color{CVNavy}\textsc{#1}}\par
+  \vspace{3pt}%
+  {\color{CVNavy}\hrule}\vspace{6pt}%
+}
+\newcommand{\CVEntry}[4]{%
+  \vspace{4pt}%
+  \noindent\textbf{\color{CVNavy}#1}\hfill\textbf{#2}\par
+  {\color{CVSlate}\textit{#3}}%
+  \ifx\relax#4\relax\else\hfill {\color{CVSlate}#4}\fi
+  \par\vspace{2pt}%
+}
+\newcommand{\CVBullet}[1]{\item #1}

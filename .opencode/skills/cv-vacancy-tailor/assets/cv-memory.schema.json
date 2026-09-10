@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "cv-memory.schema.json",
+  "title": "Evidence-based CV memory",
+  "type": "object",
+  "required": ["schema_version", "last_updated", "base_profile", "contact", "skills", "experience", "education", "certifications_courses", "languages", "evidence_records", "open_questions"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "last_updated": { "type": "string", "format": "date" },
+    "base_profile": { "$ref": "#/$defs/profile" },
+    "contact": { "type": "object", "additionalProperties": { "$ref": "#/$defs/fact" } },
+    "skills": { "type": "array", "items": { "$ref": "#/$defs/fact" } },
+    "experience": { "type": "array", "items": { "$ref": "#/$defs/experience" } },
+    "education": { "type": "array", "items": { "$ref": "#/$defs/education" } },
+    "certifications_courses": { "type": "array", "items": { "$ref": "#/$defs/fact" } },
+    "languages": { "type": "array", "items": { "$ref": "#/$defs/language" } },
+    "evidence_records": { "type": "array", "items": { "$ref": "#/$defs/evidence" } },
+    "open_questions": { "type": "array", "items": { "$ref": "#/$defs/question" } }
+  },
+  "$defs": {
+    "fact": {
+      "type": "object",
+      "required": ["value", "status", "source", "confidence"],
+      "properties": {
+        "value": {},
+        "status": { "enum": ["confirmed", "partially supported", "unknown", "contradicted"] },
+        "source": { "type": "string" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "evidence_ids": { "type": "array", "items": { "type": "string" } },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "profile": {
+      "type": "object",
+      "required": ["name", "headline", "summary"],
+      "properties": {
+        "name": { "$ref": "#/$defs/fact" },
+        "headline": { "$ref": "#/$defs/fact" },
+        "summary": { "$ref": "#/$defs/fact" }
+      },
+      "additionalProperties": false
+    },
+    "experience": {
+      "type": "object",
+      "required": ["title", "dates", "employer", "location", "responsibilities"],
+      "properties": {
+        "title": { "$ref": "#/$defs/fact" },
+        "dates": { "$ref": "#/$defs/fact" },
+        "employer": { "$ref": "#/$defs/fact" },
+        "location": { "$ref": "#/$defs/fact" },
+        "responsibilities": { "type": "array", "items": { "$ref": "#/$defs/fact" } }
+      },
+      "additionalProperties": false
+    },
+    "education": {
+      "type": "object",
+      "required": ["program", "dates", "institution"],
+      "properties": {
+        "program": { "$ref": "#/$defs/fact" },
+        "dates": { "$ref": "#/$defs/fact" },
+        "institution": { "$ref": "#/$defs/fact" }
+      },
+      "additionalProperties": false
+    },
+    "language": {
+      "type": "object",
+      "required": ["language", "proficiency"],
+      "properties": {
+        "language": { "$ref": "#/$defs/fact" },
+        "proficiency": { "$ref": "#/$defs/fact" }
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["id", "source", "excerpt", "supports"],
+      "properties": {
+        "id": { "type": "string" },
+        "source": { "type": "string" },
+        "excerpt": { "type": "string" },
+        "supports": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "question": {
+      "type": "object",
+      "required": ["question", "status", "reason"],
+      "properties": {
+        "question": { "type": "string" },
+        "status": { "enum": ["unknown", "partially supported"] },
+        "reason": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

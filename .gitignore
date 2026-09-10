@@ -1,0 +1,22 @@
+# LaTeX auxiliary files
+*.aux
+*.bcf
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Generated PDFs and build output
+build/*
+!build/.gitkeep
+
+# Editor and OS files
+.DS_Store
+*.swp
+*.swo
+# Local AI runtime state
+.atl/
+.codegraph/

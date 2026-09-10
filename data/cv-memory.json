@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "last_updated": "2026-09-10",
+  "base_profile": {
+    "name": { "value": "JUAN CAMILO GARCÍA JIMÉNEZ", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-name"] },
+    "headline": { "value": "SYSTEMS ENGINEER | JAVA BACKEND DEVELOPER", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-headline"] },
+    "summary": { "value": "Systems Engineer with 4 years of experience in Java backend development and the Spring ecosystem; microservice design and implementation, clean architecture, and reactive programming with WebFlux; efficiency, scalability, and maintainability. Technical reference who coordinates solutions and develops leadership. Observability with OpenTelemetry, Prometheus, Grafana, and Loki; Docker and Kubernetes. Security with Spring Security, JWT, and Redis; automation with Spring Batch; CI/CD pipelines.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-summary"] }
+  },
+  "contact": {
+    "email": { "value": "juancamilogjnt@gmail.com", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-contact"] },
+    "phone": { "value": "(+57) 3012072760", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-contact"] },
+    "location": { "value": "Cali, Valle del Cauca, Colombia", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-contact"] },
+    "linkedin": { "value": "https://www.linkedin.com/in/juancamilogj", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-contact"] },
+    "github": { "value": "https://github.com/JuanCamiloGJ", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-contact"] }
+  },
+  "skills": [
+    { "value": "Java", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "JavaScript", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "TypeScript", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "HTML", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "CSS", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "Spring Batch", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "Spring WebFlux", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "Spring Security", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "Spring AMQP", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "Spring Boot", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "React", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "Oracle", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "Redis", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "PostgreSQL", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "SQLite", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "MySQL", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "Docker", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "Kubernetes", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "Consul", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "Prometheus", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "Grafana", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "Loki", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "Microservices", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "RabbitMQ", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "REST APIs", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "JWT", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "Scrum", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "Kanban", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] }
+  ],
+  "experience": [
+    { "title": { "value": "Java Backend Developer (Systems Analyst)", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] }, "dates": { "value": "Nov. 2023 -- Present", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] }, "employer": { "value": "Smart Financial S.A.S.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] }, "location": { "value": "Cali", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] }, "responsibilities": [
+      { "value": "Reactive architecture with Spring WebFlux to improve the responsiveness of the banking core.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] },
+      { "value": "RabbitMQ and Consul for asynchronous messaging and dynamic load balancing in microservices.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] },
+      { "value": "Gateway with Spring WebFlux and Consul.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] },
+      { "value": "JWT security with automatic signature rotation and Redis sessions.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] },
+      { "value": "OpenTelemetry in microservices and the gateway.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] },
+      { "value": "Spring Batch for critical processes.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] },
+      { "value": "CI/CD pipelines.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] },
+      { "value": "Technical reference proposing architecture and good practices.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] },
+      { "value": "Kubernetes (pods, deployments, manifests, nodes).", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] }
+    ] },
+    { "title": { "value": "Java Backend Developer", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-2"] }, "dates": { "value": "Apr. 2022 -- Nov. 2023", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-2"] }, "employer": { "value": "Procesos y Tecnologías S.A.S.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-2"] }, "location": { "value": "", "status": "unknown", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-2"], "notes": "No location shown in the PDF." }, "responsibilities": [
+      { "value": "Developed and maintained critical banking systems, optimizing performance and reliability.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-2"] },
+      { "value": "Built ETLs for large-scale migration while preserving data integrity.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-2"] },
+      { "value": "Developed REST microservices with Java and adopted Clean Architecture and clean code practices.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-2"] }
+    ] }
+  ],
+  "education": [
+    { "program": { "value": "Systems Engineering", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-edu"] }, "dates": { "value": "2022", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-edu"] }, "institution": { "value": "Universidad de Cundinamarca", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-edu"] } },
+    { "program": { "value": "Postgraduate Studies in Organizational Development Management", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-edu"] }, "dates": { "value": "2022", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-edu"] }, "institution": { "value": "Universidad de Cundinamarca", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-edu"] } },
+    { "program": { "value": "Full-Stack Java Developer", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-edu"] }, "dates": { "value": "Feb. 2021 -- May. 2022", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-edu"] }, "institution": { "value": "Protalento & Educación IT", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-edu"] } },
+    { "program": { "value": "Security Project", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-edu"] }, "dates": { "value": "Jun. 2021 -- Jul. 2021", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-edu"] }, "institution": { "value": "Universidad de Cundinamarca", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-edu"] } }
+  ],
+  "certifications_courses": [
+    { "value": "Java Microservices Observability with OpenTelemetry -- UdeM -- May. 2025", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-certifications"] },
+    { "value": "TypeScript Without Borders: Definitive Guide -- UdeM -- May. 2023", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-certifications"] }
+  ],
+  "languages": [
+    { "language": { "value": "English", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-languages"] }, "proficiency": { "value": "A2", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-languages"] } }
+  ],
+  "evidence_records": [
+    { "id": "pdf-name", "source": "user-provided CV PDF", "excerpt": "JUAN CAMILO GARCÍA JIMÉNEZ", "supports": ["base_profile.name"] },
+    { "id": "pdf-headline", "source": "user-provided CV PDF", "excerpt": "SYSTEMS ENGINEER | JAVA BACKEND DEVELOPER", "supports": ["base_profile.headline"] },
+    { "id": "pdf-contact", "source": "user-provided CV PDF", "excerpt": "Cali, Valle del Cauca, Colombia | (+57) 3012072760 | juancamilogjnt@gmail.com | LinkedIn | GitHub", "supports": ["contact"] },
+    { "id": "pdf-summary", "source": "user-provided CV PDF", "excerpt": "Systems Engineer with 4 years of experience in Java backend development and the Spring ecosystem.", "supports": ["base_profile.summary"] },
+    { "id": "pdf-exp-1", "source": "user-provided CV PDF", "excerpt": "Smart Financial S.A.S. — Nov. 2023 – Present", "supports": ["experience[0]"] },
+    { "id": "pdf-exp-2", "source": "user-provided CV PDF", "excerpt": "Procesos y Tecnologías S.A.S. — Apr. 2022 – Nov. 2023", "supports": ["experience[1]"] },
+    { "id": "pdf-skills", "source": "user-provided CV PDF", "excerpt": "Technical Skills: Java, Spring, databases, Docker, Kubernetes, observability, microservices, RabbitMQ, REST APIs, JWT, Scrum, Kanban.", "supports": ["skills"] },
+    { "id": "pdf-edu", "source": "user-provided CV PDF", "excerpt": "Education section with four entries.", "supports": ["education"] },
+    { "id": "pdf-certifications", "source": "user-provided CV PDF", "excerpt": "Two certifications listed with UdeM and dates.", "supports": ["certifications_courses"] },
+    { "id": "pdf-languages", "source": "user-provided CV PDF", "excerpt": "English — A2", "supports": ["languages"] }
+  ],
+  "open_questions": [
+    { "question": "Which CI/CD platform or tools did you use, and in what project context?", "status": "unknown", "reason": "The PDF confirms CI/CD pipelines but gives no platform or context." },
+    { "question": "For each listed technology, what was your depth (daily use, implementation, maintenance, or exposure) and most recent use?", "status": "unknown", "reason": "The PDF lists technologies but does not establish depth or recency for each one." },
+    { "question": "Which concrete outcomes can you document for your projects without estimating metrics?", "status": "unknown", "reason": "The PDF describes outcomes qualitatively and provides no verified metrics." }
+  ]
+}
