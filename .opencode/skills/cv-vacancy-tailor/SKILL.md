@@ -4,7 +4,7 @@ description: "Trigger: vacancy, job description, tailor CV, adapt CV, recruiter,
 license: Apache-2.0
 metadata:
   author: "Juan Camilo García Jiménez"
-  version: "1.3"
+  version: "1.4"
 ---
 
 ## Activation Contract
@@ -47,7 +47,9 @@ Apply this gate to the summary, every skill grouping, and every professional bul
 - Skills: group technologies to communicate a capability or practice, never as a standalone targeted inventory.
 - Reject literal vacancy wording, fragments, generic claims, and sentences failing the remove-the-tools test: removing tools must leave meaningful capability, context, action, or purpose.
 - If a gate fails, rewrite from canonical evidence, ask for genuinely missing evidence, or omit the item. Never project failed wording.
-- Regression: confirmed project use of DDD with a non-expert note may project as `Domain-Driven Design (DDD)` in skills and mention applying DDD principles only at the confirmed scope. Basic/formative Angular may appear in a web-development skills grouping, but never as advanced or professional ownership. Conceptual S3 may appear as `AWS (S3)` with fundamentals/familiarity wording, but never as AWS deployment or ECS hands-on experience. Do not invent adjacent evidence.
+- Evidence calibration: project only technologies and practices supported by the canonical memory and relevant to the current vacancy. Preserve each item's recorded scope, depth, limitations, and recency internally, but do not force any technology into the CV. Never upgrade familiarity, conceptual knowledge, formative exposure, or non-expert practice into professional ownership or expertise.
+- Vacancy relevance: a confirmed technology is not automatically selected. Include it only when it strengthens a requirement, capability, or evidence-backed responsibility for the current vacancy.
+- Missing evidence: never fill gaps with adjacent technologies, semantic similarity, or vacancy wording. If a requirement is unknown or contradicted, omit it or report it as a gap.
 
 ## Decision Gates
 | Evidence state | Action |
