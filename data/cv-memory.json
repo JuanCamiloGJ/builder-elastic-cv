@@ -15,6 +15,7 @@
   },
   "skills": [
     { "value": "Java", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
+    { "value": "Java 8, 11, 17, and 21", "status": "confirmed", "source": "User-confirmed clarification (conversation)", "confidence": 1.0, "evidence_ids": ["user-clarifications-2026-09-10-java-cloud"], "notes": "Used across projects at both listed employers." },
     { "value": "JavaScript", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
     { "value": "TypeScript", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
     { "value": "HTML", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
@@ -25,6 +26,13 @@
     { "value": "Spring AMQP", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
     { "value": "Spring Boot", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
     { "value": "React", "status": "confirmed", "source": "user-provided CV PDF and user-confirmed clarification", "confidence": 1.0, "evidence_ids": ["pdf-skills", "user-keppri-confirmations"], "notes": "Basic/formative experience: incomplete course and simple components; no complete application." },
+    { "value": "Angular", "status": "confirmed", "source": "User-confirmed clarification (conversational confirmation)", "confidence": 1.0, "evidence_ids": ["user-clarifications-2026-09-10"], "notes": "Basic/formative knowledge at approximately the same level as React; no professional Angular delivery claimed." },
+    { "value": "OpenAPI", "status": "confirmed", "source": "User-confirmed clarification (conversational confirmation)", "confidence": 1.0, "evidence_ids": ["user-clarifications-2026-09-10"], "notes": "Knowledge and use in projects; no metrics or exact documentation ownership established." },
+    { "value": "Domain-Driven Design (DDD)", "status": "confirmed", "source": "User-confirmed clarification (conversational confirmation)", "confidence": 1.0, "evidence_ids": ["user-clarifications-2026-09-10"], "notes": "Knowledge and use in projects at a non-expert level; no expert leadership claimed." },
+    { "value": "AWS S3", "status": "confirmed", "source": "User-confirmed clarification (conversation)", "confidence": 1.0, "evidence_ids": ["user-clarifications-2026-09-10-java-cloud"], "notes": "Hands-on project experience confirmed by the user." },
+    { "value": "AWS ECS", "status": "confirmed", "source": "User-confirmed clarification (conversation)", "confidence": 1.0, "evidence_ids": ["user-clarifications-2026-09-10-java-cloud"], "notes": "Hands-on AWS deployment experience confirmed by the user." },
+    { "value": "OAuth 2.0", "status": "confirmed", "source": "User-confirmed clarification (conversational confirmation)", "confidence": 1.0, "evidence_ids": ["user-clarifications-2026-09-10"], "notes": "Conceptual awareness only; user has never integrated it." },
+    { "value": "SQS", "status": "confirmed", "source": "User-confirmed clarification (conversational confirmation)", "confidence": 1.0, "evidence_ids": ["user-clarifications-2026-09-10"], "notes": "Conceptual comparison/knowledge only; not used as project experience and not presented as an AWS messaging implementation." },
     { "value": "Oracle", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
     { "value": "Redis", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
     { "value": "PostgreSQL", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
@@ -44,6 +52,8 @@
     { "value": "Kanban", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-skills"] },
     { "value": "Jenkins", "status": "confirmed", "source": "user-confirmed vacancy details", "confidence": 1.0, "evidence_ids": ["user-keppri-confirmations"], "notes": "Created pipelines to compile Java projects and deploy them to a cluster." },
     { "value": "Git", "status": "confirmed", "source": "user-confirmed vacancy details", "confidence": 1.0, "evidence_ids": ["user-keppri-confirmations"], "notes": "Used daily." },
+    { "value": "Bitbucket", "status": "confirmed", "source": "User-confirmed clarification (conversational confirmation)", "confidence": 1.0, "evidence_ids": ["user-clarifications-2026-09-10"], "notes": "Confirmed Git-based version-control platform usage." },
+    { "value": "GitHub", "status": "confirmed", "source": "User-confirmed clarification (conversational confirmation)", "confidence": 1.0, "evidence_ids": ["user-clarifications-2026-09-10"], "notes": "Confirmed Git-based version-control platform usage." },
     { "value": "GitFlow", "status": "confirmed", "source": "user-confirmed vacancy details", "confidence": 1.0, "evidence_ids": ["user-keppri-confirmations"], "notes": "Applied formally." },
     { "value": "LLMs, MCPs, subagents, Engram, OpenCode, Gentle AI, SDD workflows, project-specific skills", "status": "confirmed", "source": "User-confirmed vacancy details", "confidence": 1.0, "evidence_ids": ["user-ai-practice-confirmation"], "notes": "Transversal professional engineering practice in projects; not a standalone project." }
   ],
@@ -97,7 +107,9 @@
     { "id": "pdf-languages", "source": "user-provided CV PDF", "excerpt": "English — A2", "supports": ["languages"] },
     { "id": "user-keppri-confirmations", "source": "User-confirmed vacancy details", "excerpt": "Jenkins pipelines compile Java projects and deploy them to a cluster; Git is used daily with formal GitFlow; React experience is basic/formative, from an incomplete course and simple components, with no complete application.", "supports": ["base_profile.summary", "skills", "experience[0].responsibilities"] },
     { "id": "user-confirmed-5-years", "source": "Explicit user correction", "excerpt": "Professional experience is confirmed by the user as 5 years; do not replace it with date arithmetic.", "supports": ["base_profile.summary"] },
-    { "id": "user-ai-practice-confirmation", "source": "User-confirmed vacancy details", "excerpt": "Professional use of LLMs, MCPs, subagents, persistent context with Engram, OpenCode orchestration, Gentle AI, SDD workflows, and project-specific skills as transversal practice in projects; do not present it as a standalone project.", "supports": ["base_profile.headline", "base_profile.summary", "professional_practice", "experience[0].responsibilities"] }
+     { "id": "user-ai-practice-confirmation", "source": "User-confirmed vacancy details", "excerpt": "Professional use of LLMs, MCPs, subagents, persistent context with Engram, OpenCode orchestration, Gentle AI, SDD workflows, and project-specific skills as transversal practice in projects; do not present it as a standalone project.", "supports": ["base_profile.headline", "base_profile.summary", "professional_practice", "experience[0].responsibilities"] },
+      { "id": "user-clarifications-2026-09-10", "source": "User-confirmed clarification (conversation)", "excerpt": "Angular is basic/formative at approximately React's level; OAuth 2.0 is conceptual awareness without integration; OpenAPI and DDD were used in projects, with DDD at a non-expert level; SQS is conceptual comparison only; Git, Bitbucket, and GitHub usage is confirmed; GitLab is not confirmed.", "supports": ["skills"] },
+      { "id": "user-clarifications-2026-09-10-java-cloud", "source": "User-confirmed clarification (conversation)", "excerpt": "Used Java 8, 11, 17, and 21 across projects at both employers; worked with AWS deployments on ECS and with S3; SQL Server was not used directly, while Oracle was used as a relational database.", "supports": ["skills", "experience"] }
   ],
   "open_questions": [
     { "question": "For each listed technology, what was your depth (daily use, implementation, maintenance, or exposure) and most recent use?", "status": "unknown", "reason": "The PDF lists technologies but does not establish depth or recency for each one." },
