@@ -1,63 +1,50 @@
 ---
 name: cv-vacancy-tailor
-description: "Trigger: vacancy, job description, tailor CV, adapt CV, recruiter, ATS matching, fit a vacancy. Transform verified candidate evidence into a truthful, targeted CV."
+description: "Trigger: vacancy, job description, tailor CV, recruiter, ATS. Build a truthful, evidence-based CV tailored to the vacancy."
 license: Apache-2.0
 metadata:
   author: "Juan Camilo García Jiménez"
-  version: "1.7"
+  version: "1.9"
 ---
 
 ## Activation Contract
 Activate for vacancy analysis, recruiter screening, ATS matching, or CV adaptation in this project.
 
 ## Hard Rules
-Load `data/cv-memory.json` once, first. Keep it read-only unless the user explicitly authorizes persistence; confirmation alone is not authorization. Treat LaTeX as generated projection, protect source metadata, and never expose internal labels or notes in CV copy.
+Load `data/cv-memory.json` once, first, and keep it read-only unless the user explicitly authorizes persistence; confirmation alone is not authorization. Load and enforce `assets/cv-element-templates.md` before drafting. Treat LaTeX as a generated projection: protect source metadata and never expose internal labels or notes.
 
-## Recruiter Responsibility
-Act as a senior recruiter and positioning editor, not a keyword formatter. Before drafting, identify role level, must-haves, preferred signals, business context, screening objections, and a defensible value proposition. Optimize for credible, relevant, distinctive, quickly scannable evidence—not keyword count.
+Act as a senior recruiter and positioning editor, not a keyword formatter. Keep fit analysis private from the public CV. Analyze gaps, uncertainty, limitations, screening risks, role level, must-haves, preferred signals, business context, and value proposition privately. Visible copy may contain only supported, scope-matched claims. Never put negative gap/disclaimer language, apologies, “without…”, “no experience…”, or detailed weakness explanations in the profile or skills. Omission must never become a false positive or unsupported senior title.
 
-## Evidence, Questions, and Selection
-Parse the vacancy into testable requirements and compare **every** requirement with memory before writing. Detect contradictions in dates, titles, technologies, depth, scope, or ownership first: stop the affected claim and ask the candidate for resolution; never choose silently. For material missing or uncertain evidence, ask one targeted question at a time and pause drafting. Only call it a gap after the candidate confirms it is absent, unavailable, or inapplicable; never infer or invent.
+Use clear hierarchy, reverse chronology, strong action verbs, accomplishment-based prose, natural ATS terms, consistent punctuation, no first person, and no empty claims. Maintain traceability for every material claim to canonical evidence, including scope, ownership, depth, dates, recency, provenance, limitations, and confidence.
 
-| Classification | Rule |
-| --- | --- |
-| confirmed | Direct evidence supports the requirement; it may be selected. |
-| partially supported | Use only supported scope; ask if the missing part could change fit. |
-| unknown / missing | Ask first when material; report as a gap only after candidate confirmation. |
-| contradicted | Ask for resolution before drafting; omit until resolved and report the resolved issue. |
+Before asking questions or classifying fit, semantically normalize each vacancy requirement to its underlying capability. Classify evidence as direct, foundational/parent, transferable sibling/tool, adjacent, or unsupported/missing. Infer only the supported capability and keep exact product/version experience separately labeled: Spring evidences Java use but not an exact Java version; Bitbucket evidences Git/source-control workflows but not GitHub-specific product experience. Do not ask for a parent capability already evidenced by a child technology, and do not erase that underlying competence when the exact product is absent.
 
-Maintain private or recruiter-report traceability for every material claim: link it to concrete canonical evidence and preserve scope, ownership, depth, dates, recency, limitations, provenance, and confidence. Rank evidence by relevance, strength, recency, distinctiveness, and value; penalize duplicates, stale/low-signal facts, and tool-only material. Plan summary, reverse-chronological experience, grouped skills, and omissions explicitly. Never drop important evidence merely because it appears later in memory.
-
-## Human Recruiter Readiness Gate
-The three evaluators are real human recruiters; the first submission must be strong because a second opportunity is not guaranteed. Do not simulate external reviewers, claim reviewer availability, or imply anyone reviewed the draft. Instead, critically inspect it yourself before projection: can a recruiter understand value quickly, see fit and relevant evidence, notice honest gaps, and trust every claim? If not, rewrite from evidence, ask the highest-value question, or omit the claim. Record recruiter-readiness findings and resolved issues, never external approval.
-
-## Writing and Budget Contract
-Apply practical Oxford-style principles used by this project—clear hierarchy, concise positioning, reverse chronology, strong action verbs, accomplishment/capability/context/purpose bullets, scannable prose, consistent punctuation, no first person, no empty claims—without claiming an official external Oxford standard. Transform each fact as `evidence -> capability -> context/problem -> action/solution -> technology evidence -> verified outcome/purpose`. Contextualize ATS terms naturally; tools support the narrative.
-
-- **Summary:** Exactly two candidate-focused sentences, 45–70 words: value first, then identity/domain/experience, problems solved, outcome or purpose, and delivery context. Use at most three technology groups; no individual versions, long sequences, or AI workflow names unless AI is primary. Reject tool-chain, Skills-copy, empty, or tool-dependent summaries and rewrite.
-- **Experience:** One main idea per bullet; use scope-matched verbs and `action + context/problem + solution + evidence technology + outcome/purpose`. Reject fragments, vacancy-copy, tool-only bullets, and list-like prose. Use verified qualitative purpose when outcomes are unmeasured.
-- **Skills:** Include only relevant supported inventory, grouped by capability/practice; it need not include all memory and must not replace experience or be copied into the summary.
+When material ambiguity remains and the runtime exposes the native `question` tool, ask through it—not prose—using one grouped interaction for related questions, preserving single-select or multi-select semantics and allowing custom text where needed; then pause. If unavailable, ask a complete plain-text fallback and pause without assuming an answer. Never ask questions already resolved by semantic transfer.
 
 ## Decision Gates
-Draft only confirmed/appropriately limited evidence after transformation. For material unknowns or contradictions, ask and pause. For failed writing or traceability gates, rewrite or omit. Obtain required edit approval before projection; never persist memory without separate explicit authorization.
+| Gate | Decision |
+| --- | --- |
+| Semantic requirement analysis | Normalize every requirement to its underlying capability before fit classification or questions; record direct, foundational/parent, transferable sibling/tool, adjacent, and unsupported/missing evidence, with product/version limits explicit. |
+| Requirement matrix | Compare normalized requirements with memory. Select direct or scope-matched transferred evidence; preserve underlying competence when an exact product is missing, but never upgrade it to product/version evidence. |
+| Uncertainty or contradiction | For material missing, uncertain, or contradictory dates, titles, technology, depth, scope, or ownership, ask one non-redundant targeted question through native `question` when available, otherwise complete plain text, and pause. Report a gap only after candidate confirmation; never infer or invent. |
+| Evidence selection | Rank relevance, strength, recency, distinctiveness, and value; penalize duplicates, stale/low-signal facts, and tool-only material. Do not discard important evidence because it appears later in memory. |
+| Public elements | Enforce the asset: summary is exactly two candidate-focused sentences and 45–70 words; experience uses one accomplishment-based idea per bullet (`action + context/problem + solution + technology evidence + outcome/purpose`), retaining verified qualitative purpose when outcomes are unmeasured; skills are concise grouped `Category: items`, relevant and supported. Keep the summary to at most three technology groups; omit versions, long sequences, and AI workflow names unless AI is primary. Omit weak skills or use one short truthful neutral label only when strategic. Reject tool chains, vacancy-copy, fragments, list-like bullets, and Skills-copy. |
+| Human readiness | Before projection, inspect whether a real recruiter can quickly understand value, fit, relevant evidence, and trustworthy claims. Rewrite, ask, or omit when not ready. Do not simulate reviewers, claim external review, or imply approval. |
+| Length and approval | If over two pages, prune least relevant skills, duplicate bullets, stale/low-signal evidence, generic wording, then compress detail. Preserve contact, employers/titles/dates, education, language, strongest relevant evidence, and defensible evidence per employer. Obtain edit approval before projection; persistence also needs separate authorization. |
 
-If over two pages, prune in this order: least relevant grouped skills; duplicate/overlapping bullets; stale or low-signal evidence; generic wording; then compress remaining detail. Preserve contact, employers/titles/dates, education, language, strongest vacancy-relevant evidence, and at least defensible evidence per employer.
 
 ## Execution Steps
-1. Load memory -> parse vacancy -> classify every requirement -> detect contradictions -> ask pending questions -> rank/select.
-2. Define value proposition, role level, screening risks, section plan, ranked selections, omissions, and pruning rationale.
-3. Draft and self-check summary, experience, skills, traceability, limitations, ATS context, factuality, and bilingual parity.
-4. Apply the human recruiter-readiness gate and two-page budget; resolve findings without unsupported claims.
-5. Obtain approval when required, project both languages, and change memory only when explicitly authorized.
-6. Build, inspect extracted text and page count, and run repository validation.
-
-## Final Pre-Projection Checklist
-Block projection until memory-first order, complete matrix, resolved contradiction/question gates, value proposition, ranked selections, section plan, traceability, writing gates, honest fit/gaps, recruiter-readiness findings with no unresolved blockers, privacy/limitation checks, factual parity, two-page budget, and required approval pass.
+1. Load memory first, load the asset, parse and semantically normalize every vacancy requirement, classify evidence and fit, then ask only unresolved material questions through the required interaction path and pause.
+2. Define value proposition, role level, risks, section plan, ranked evidence, omissions, and pruning rationale; retain private fit analysis and traceability.
+3. Draft profile, reverse-chronological experience, and grouped skills under every asset boundary; self-check factuality, ATS context, traceability, public/private separation, and truthful bilingual parity.
+4. Apply human-readiness and two-page gates. After required approval, project both languages; change memory only with explicit authorization.
+5. Build, check page count and `pdftotext` output, and run repository validation.
 
 ## Output Contract
-Return: status; classified requirement matrix; questions asked/answered; value proposition; ranked selections; omissions and pruning decisions; claim-to-evidence traceability status; fit/gaps; recruiter-readiness findings and resolved issues; approval state; files/memory status; projections; verification; variants; overflow.
+Return: status; complete requirement matrix; questions asked/answered; value proposition; ranked selections; omissions and pruning decisions; claim-to-evidence traceability; private fit/gaps; recruiter-readiness findings and resolutions; template compliance for profile, experience, and skills; public/private boundary compliance; approval state; files and memory status; projections and bilingual parity; build, page-count, `pdftotext`, and repository validation; variants; overflow.
 
 ## References
 - `../../../data/cv-memory.json` — canonical candidate evidence.
 - `assets/cv-memory.schema.json` — memory schema.
+- `assets/cv-element-templates.md` — mandatory public-CV element templates.
 - `../../../AGENTS.md` — project conventions.
