@@ -6,7 +6,9 @@ Use these templates for every vacancy-tailored CV. They are mandatory public-cop
 
 **Purpose:** Make a recruiter want to continue by presenting the candidate's supported value, not by narrating limitations.
 
-**Exact shape:** Write exactly two sentences, normally 45–70 words total.
+**Exact shape:** Write exactly two sentences and 45–70 words total. Aim for no more than four rendered lines where possible; never replace sentence or word control with line count because PDF width and language affect rendering.
+
+Align the title strategically when useful, but never assert unsupported specialization, seniority, or responsibility. The target title does not override evidence.
 
 1. **Value first:** capability or business value + supported role/domain + verified scope or experience.
 2. **Proof and purpose:** relevant problems solved + supported delivery context/methods or technology groups + verified outcome or purpose.
@@ -27,6 +29,12 @@ Each bullet contains one main idea and follows:
 
 Select evidence by vacancy relevance, strength, ownership, recency, distinctiveness, and verified impact. Order roles in reverse chronology and place the strongest supported fit first within each role. Use scope-matched action verbs, retain qualitative purpose when outcomes are unmeasured, and omit duplicate, tool-only, fragmented, or unsupported claims.
 
+Use 5–7 highest-impact bullets per role by default, with fewer when evidence is limited. Keep one main idea per bullet. Do not consolidate unrelated achievements merely to meet the count.
+
+## Education & Certifications
+
+Use only confirmed institution, location, formal title, provider, and dates. Omit missing fields or ask for confirmation; never invent. Keep certifications relevant and standardize title, provider, and date.
+
 ## Technical Skills
 
 Use a concise, scannable grouped inventory:
@@ -36,3 +44,7 @@ Use a concise, scannable grouped inventory:
 Keep only the most vacancy-relevant supported items, usually three to six per category. Prefer positive capability inventory; do not turn skills into explanations. Omit weak or material-gap skills by default. If inclusion is strategically necessary, use one short truthful neutral label such as `Foundational exposure: X` or `Working knowledge: X`, and keep the detailed limitation private.
 
 **Prohibited:** long negative parentheticals; “no experience,” “without…,” apologies, self-disqualifying caveats, detailed weakness explanations, false positive claims, or unsupported titles such as Senior Full Stack or Senior React.
+
+## Bilingual parity
+
+Both language projections must preserve the same factual scope, dates, seniority, technologies, ownership, and responsibility level. Translate faithfully; do not add or weaken claims.
