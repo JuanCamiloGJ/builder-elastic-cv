@@ -1,9 +1,19 @@
 % One-column, text-first layout. Contact details are always represented as text.
-\newcommand{\CVHeader}{%
+\newcommand{\CVHeaderName}{%
   {\fontsize{21pt}{24pt}\selectfont\bfseries\color{CVNavy}\CVName}\\[2pt]
-  {\large\bfseries\color{CVSlate}\CVRole}\\[7pt]
+  {\large\bfseries\color{CVSlate}\CVRole}\\[7pt]}
+\newcommand{\CVHeaderContact}{%
   \CVLocation\quad |\quad \CVPhone\quad |\quad \href{mailto:\CVEmail}{\CVEmail}\\[2pt]
-  LinkedIn: \href{\CVLinkedIn}{linkedin.com/in/JuanCamiloGJ}\quad |\quad GitHub: \href{\CVGitHub}{github.com/JuanCamiloGJ}\par
+  LinkedIn: \href{\CVLinkedIn}{linkedin.com/in/JuanCamiloGJ}\quad |\quad GitHub: \href{\CVGitHub}{github.com/JuanCamiloGJ}\par}
+\newcommand{\CVHeader}{%
+  \ifdefined\CVCPhoto
+    \CVHeaderName
+    \noindent\begin{minipage}[c]{0.84\linewidth}\CVHeaderContact\end{minipage}\hfill
+    \begin{minipage}[c]{0.14\linewidth}\raggedleft\includegraphics[height=2.4cm]{assets/photo.png}\end{minipage}%
+    \par
+  \else
+    \CVHeaderName\CVHeaderContact
+  \fi
   \vspace{6pt}{\color{CVNavy}\hrule}\vspace{1pt}}
 \newcommand{\CVListStart}{\begin{itemize}[leftmargin=1.2em,itemsep=1pt,topsep=1pt,parsep=0pt]}
 \newcommand{\CVListEnd}{\end{itemize}}

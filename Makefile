@@ -8,6 +8,10 @@ DATE_DIR := $(shell TZ=America/Bogota date +%d%m%Y)
 COMPOSE := docker compose
 DOCKER_IMAGE := builder-elastic-cv:bookworm
 
+ifeq ($(PHOTO),1)
+PHOTO_PRETEX := -pretex='\def\CVCPhoto{1}'
+endif
+
 .PHONY: all build archive clean validate check-dependencies docker-build docker-all
 
 all: build validate
@@ -21,9 +25,9 @@ build: check-dependencies
 	@if [ "$(VARIANT)" != "" ]; then \
 		case "$(VARIANT)" in spanish|english) ;; *) echo "ERROR: unknown VARIANT='$(VARIANT)'. Use spanish or english." >&2; exit 1 ;; esac; \
 		echo "Building $(VARIANT)..."; \
-		latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=$(BUILD_DIR) -jobname=$(PDF_PREFIX)$(VARIANT) variants/$(VARIANT).tex; \
+		latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=$(BUILD_DIR) -jobname=$(PDF_PREFIX)$(VARIANT) $(PHOTO_PRETEX) variants/$(VARIANT).tex; \
 	else \
-		for variant in $(VARIANTS); do echo "Building $$variant..."; latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=$(BUILD_DIR) -jobname=$(PDF_PREFIX)$$variant variants/$$variant.tex || exit $$?; done; \
+		for variant in $(VARIANTS); do echo "Building $$variant..."; latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=$(BUILD_DIR) -jobname=$(PDF_PREFIX)$$variant $(PHOTO_PRETEX) variants/$$variant.tex || exit $$?; done; \
 	fi
 	@$(MAKE) --no-print-directory archive GENERATED="$(if $(VARIANT),$(VARIANT),$(VARIANTS))"
 

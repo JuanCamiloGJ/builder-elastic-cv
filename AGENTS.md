@@ -23,6 +23,7 @@ make all
 make build
 make validate
 make build VARIANT=spanish|english
+make build PHOTO=1
 make archive
 make clean
 tests/validate-text.sh build/_CV_Juan_Camilo_Garcia_Jimenez_english.pdf tests/required-sections-english.txt
@@ -30,6 +31,8 @@ make docker-all
 ```
 
 `make all` builds and then validates. `make validate` expects PDFs in `build/` and must follow a build. Building requires `latexmk` and `pdflatex`; validation requires `pdftotext`. `latexmkrc` forces `pdflatex`, enables halt-on-error, and allows at most three repeats.
+
+`make build PHOTO=1` includes the photo from `assets/photo.png` in the header, aligned and centered with the contact block; the default build has no photo. Combine with `VARIANT` as needed (`make build PHOTO=1 VARIANT=spanish`).
 
 Every successful `make build` (local or Docker) also archives each generated PDF into `build/<DDMMYYYY>/` as `<pdf name>_<N>.pdf`, where `N` is the next iteration number of that day (`TZ=America/Bogota`). Identical copies are skipped, so only actual content changes create a new iteration. `make archive` runs the archiving step manually, and `make clean` removes root-level build files while preserving the date folders.
 

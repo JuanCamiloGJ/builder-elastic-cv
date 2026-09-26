@@ -9,7 +9,7 @@
 \CVHeader
 \input{src/content/\CVLanguage/profile.tex}
 \input{src/content/\CVLanguage/experience.tex}
-\newpage
+\ifdefined\CVCPhoto\else\newpage\fi
 \input{src/content/\CVLanguage/skills.tex}
 \input{src/content/\CVLanguage/education.tex}
 \input{src/content/\CVLanguage/certifications.tex}
