@@ -13,7 +13,7 @@ This repository is a reusable, ATS-oriented, one-column LaTeX CV targeting two r
 
 ## Before publishing
 
-- Keep both localized versions factually identical; the Languages section contains only the supplied English A2 proficiency.
+- Keep both localized versions factually identical; the Languages section contains only the user-confirmed English B1 proficiency.
 - After content or layout changes, inspect extracted text with `pdftotext`.
 
 ## Commands
@@ -23,12 +23,15 @@ make all
 make build
 make validate
 make build VARIANT=spanish|english
+make archive
 make clean
 tests/validate-text.sh build/_CV_Juan_Camilo_Garcia_Jimenez_english.pdf tests/required-sections-english.txt
 make docker-all
 ```
 
 `make all` builds and then validates. `make validate` expects PDFs in `build/` and must follow a build. Building requires `latexmk` and `pdflatex`; validation requires `pdftotext`. `latexmkrc` forces `pdflatex`, enables halt-on-error, and allows at most three repeats.
+
+Every successful `make build` (local or Docker) also archives each generated PDF into `build/<DDMMYYYY>/` as `<pdf name>_<N>.pdf`, where `N` is the next iteration number of that day (`TZ=America/Bogota`). Identical copies are skipped, so only actual content changes create a new iteration. `make archive` runs the archiving step manually, and `make clean` removes root-level build files while preserving the date folders.
 
 ## Build locations
 
