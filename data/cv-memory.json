@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "last_updated": "2026-09-10",
+  "last_updated": "2026-09-26",
   "base_profile": {
     "name": { "value": "JUAN CAMILO GARCÍA JIMÉNEZ", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-name"] },
-    "headline": { "value": "SYSTEMS ENGINEER | JAVA BACKEND DEVELOPER | AI-ASSISTED ENGINEERING PRACTICE", "status": "confirmed", "source": "User-confirmed vacancy adaptation", "confidence": 1.0, "evidence_ids": ["pdf-headline", "user-ai-practice-confirmation"] },
+    "headline": { "value": "JAVA BACKEND DEVELOPER | LLM & DEVELOPER TOOLING", "status": "confirmed", "source": "User-confirmed vacancy adaptation", "confidence": 1.0, "evidence_ids": ["pdf-headline", "user-ai-practice-confirmation"] },
     "summary": { "value": "Systems Engineer with 5 years of experience delivering Java and Spring Boot backend solutions in banking environments, including reactive WebFlux microservices, clean architecture, and technical leadership. Applies LLMs, MCPs, subagents, persistent context with Engram, OpenCode orchestration, Gentle AI, SDD workflows, and project-specific skills as transversal engineering practices for structured, maintainable delivery.", "status": "confirmed", "source": "User-provided CV PDF, explicit user correction, and user-confirmed vacancy details", "confidence": 1.0, "evidence_ids": ["pdf-summary", "user-confirmed-5-years", "user-keppri-confirmations", "user-ai-practice-confirmation"] }
   },
   "contact": {
@@ -55,7 +55,10 @@
     { "value": "Bitbucket", "status": "confirmed", "source": "User-confirmed clarification (conversational confirmation)", "confidence": 1.0, "evidence_ids": ["user-clarifications-2026-09-10"], "notes": "Confirmed Git-based version-control platform usage." },
     { "value": "GitHub", "status": "confirmed", "source": "User-confirmed clarification (conversational confirmation)", "confidence": 1.0, "evidence_ids": ["user-clarifications-2026-09-10"], "notes": "Confirmed Git-based version-control platform usage." },
     { "value": "GitFlow", "status": "confirmed", "source": "user-confirmed vacancy details", "confidence": 1.0, "evidence_ids": ["user-keppri-confirmations"], "notes": "Applied formally." },
-    { "value": "LLMs, MCPs, subagents, Engram, OpenCode, Gentle AI, SDD workflows, project-specific skills", "status": "confirmed", "source": "User-confirmed vacancy details", "confidence": 1.0, "evidence_ids": ["user-ai-practice-confirmation"], "notes": "Transversal professional engineering practice in projects; not a standalone project." }
+    { "value": "LLMs, MCPs, subagents, Engram, OpenCode, Gentle AI, SDD workflows, project-specific skills", "status": "confirmed", "source": "User-confirmed vacancy details", "confidence": 1.0, "evidence_ids": ["user-ai-practice-confirmation"], "notes": "Transversal professional engineering practice in projects; not a standalone project." },
+    { "value": "JUnit", "status": "confirmed", "source": "User-confirmed clarification (conversation)", "confidence": 1.0, "evidence_ids": ["user-confirmations-2026-09-26-testing"], "notes": "Unit testing applied at Smart Financial." },
+    { "value": "Mockito", "status": "confirmed", "source": "User-confirmed clarification (conversation)", "confidence": 1.0, "evidence_ids": ["user-confirmations-2026-09-26-testing"], "notes": "Unit testing applied at Smart Financial." },
+    { "value": "JMeter", "status": "confirmed", "source": "User-confirmed clarification (conversation)", "confidence": 1.0, "evidence_ids": ["user-confirmations-2026-09-26-testing"], "notes": "Load and performance testing applied at both employers." }
   ],
   "professional_practice": [
     { "value": "Professional use of LLMs, MCPs, subagents, persistent context with Engram, OpenCode orchestration, Gentle AI, SDD workflows, and project-specific skills", "status": "confirmed", "source": "User-confirmed vacancy details", "confidence": 1.0, "evidence_ids": ["user-ai-practice-confirmation"], "notes": "Transversal engineering practice applied in projects; not presented as a standalone project. Does not establish ownership of production AI systems, production MCP integrations, RAG, or multi-agent production systems." }
@@ -73,12 +76,14 @@
        { "value": "Used Git daily and applied formal GitFlow.", "status": "confirmed", "source": "user-confirmed vacancy details", "confidence": 1.0, "evidence_ids": ["user-keppri-confirmations"] },
        { "value": "Applied LLMs, MCPs, subagents, persistent context with Engram, OpenCode orchestration, Gentle AI, SDD workflows, and project-specific skills as transversal engineering practices across project work.", "status": "confirmed", "source": "User-confirmed vacancy details", "confidence": 1.0, "evidence_ids": ["user-ai-practice-confirmation"] },
        { "value": "Technical reference proposing architecture and good practices.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] },
-      { "value": "Kubernetes (pods, deployments, manifests, nodes).", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] }
+      { "value": "Kubernetes (pods, deployments, manifests, nodes).", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-1"] },
+      { "value": "Applied unit testing with JUnit and Mockito, and load testing with JMeter, to validate service quality and performance.", "status": "confirmed", "source": "User-confirmed clarification (conversation)", "confidence": 1.0, "evidence_ids": ["user-confirmations-2026-09-26-testing"] }
     ] },
     { "title": { "value": "Java Backend Developer", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-2"] }, "dates": { "value": "Apr. 2022 -- Nov. 2023", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-2"] }, "employer": { "value": "Procesos y Tecnologías S.A.S.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-2"] }, "location": { "value": "", "status": "unknown", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-2"], "notes": "No location shown in the PDF." }, "responsibilities": [
       { "value": "Developed and maintained critical banking systems, optimizing performance and reliability.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-2"] },
       { "value": "Built ETLs for large-scale migration while preserving data integrity.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-2"] },
-      { "value": "Developed REST microservices with Java and adopted Clean Architecture and clean code practices.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-2"] }
+      { "value": "Developed REST microservices with Java and adopted Clean Architecture and clean code practices.", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-exp-2"] },
+      { "value": "Applied load testing with JMeter to validate the performance of delivered systems.", "status": "confirmed", "source": "User-confirmed clarification (conversation)", "confidence": 1.0, "evidence_ids": ["user-confirmations-2026-09-26-testing"] }
     ] }
   ],
   "education": [
@@ -92,7 +97,7 @@
     { "value": "TypeScript Without Borders: Definitive Guide -- UdeM -- May. 2023", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-certifications"] }
   ],
   "languages": [
-    { "language": { "value": "English", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-languages"] }, "proficiency": { "value": "A2", "status": "confirmed", "source": "user-provided CV PDF", "confidence": 1.0, "evidence_ids": ["pdf-languages"] } }
+    { "language": { "value": "English", "status": "confirmed", "source": "User-confirmed clarification", "confidence": 1.0, "evidence_ids": ["user-confirmed-english-b1"] }, "proficiency": { "value": "B1", "status": "confirmed", "source": "User-confirmed clarification", "confidence": 1.0, "evidence_ids": ["user-confirmed-english-b1"] } }
   ],
   "evidence_records": [
     { "id": "pdf-name", "source": "user-provided CV PDF", "excerpt": "JUAN CAMILO GARCÍA JIMÉNEZ", "supports": ["base_profile.name"] },
@@ -109,7 +114,9 @@
     { "id": "user-confirmed-5-years", "source": "Explicit user correction", "excerpt": "Professional experience is confirmed by the user as 5 years; do not replace it with date arithmetic.", "supports": ["base_profile.summary"] },
      { "id": "user-ai-practice-confirmation", "source": "User-confirmed vacancy details", "excerpt": "Professional use of LLMs, MCPs, subagents, persistent context with Engram, OpenCode orchestration, Gentle AI, SDD workflows, and project-specific skills as transversal practice in projects; do not present it as a standalone project.", "supports": ["base_profile.headline", "base_profile.summary", "professional_practice", "experience[0].responsibilities"] },
       { "id": "user-clarifications-2026-09-10", "source": "User-confirmed clarification (conversation)", "excerpt": "Angular is basic/formative at approximately React's level; OAuth 2.0 is conceptual awareness without integration; OpenAPI and DDD were used in projects, with DDD at a non-expert level; SQS is conceptual comparison only; Git, Bitbucket, and GitHub usage is confirmed; GitLab is not confirmed.", "supports": ["skills"] },
-      { "id": "user-clarifications-2026-09-10-java-cloud", "source": "User-confirmed clarification (conversation)", "excerpt": "Used Java 8, 11, 17, and 21 across projects at both employers; worked with AWS deployments on ECS and with S3; SQL Server was not used directly, while Oracle was used as a relational database.", "supports": ["skills", "experience"] }
+       { "id": "user-clarifications-2026-09-10-java-cloud", "source": "User-confirmed clarification (conversation)", "excerpt": "Used Java 8, 11, 17, and 21 across projects at both employers; worked with AWS deployments on ECS and with S3; SQL Server was not used directly, while Oracle was used as a relational database.", "supports": ["skills", "experience"] },
+       { "id": "user-confirmed-english-b1", "source": "User-confirmed clarification", "excerpt": "English proficiency confirmed as B1.", "supports": ["languages[0].proficiency"] },
+        { "id": "user-confirmations-2026-09-26-testing", "source": "User-confirmed clarification (conversation)", "excerpt": "Unit testing with JUnit and Mockito applied at Smart Financial; load and performance testing with JMeter applied at both employers.", "supports": ["skills", "experience[0].responsibilities", "experience[1].responsibilities"] }
   ],
   "open_questions": [
     { "question": "For each listed technology, what was your depth (daily use, implementation, maintenance, or exposure) and most recent use?", "status": "unknown", "reason": "The PDF lists technologies but does not establish depth or recency for each one." },
