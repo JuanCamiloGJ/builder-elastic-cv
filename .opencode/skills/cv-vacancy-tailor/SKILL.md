@@ -13,6 +13,8 @@ Activate for vacancy analysis, recruiter screening, ATS matching, or CV adaptati
 ## Hard Rules
 Load `../../../data/cv-memory.json` once, first; keep it read-only unless the user explicitly authorizes persistence (confirmation is not authorization). Load and enforce `assets/cv-element-templates.md` before drafting. LaTeX is a generated projection: protect metadata and never expose internal labels or notes.
 
+Commit discipline: when a run modifies CV content, finish with one conventional commit containing only the skill-touched files (`data/cv-memory.json` and the localized `src/config/` and `src/content/` projections), staged by explicit path — never `git add -A` or `.`. The commit message must describe the CV content change itself, so every iteration can be contrasted against prior content through git history. Never bundle unrelated repository changes (tooling, skills, docs, build system) into that commit; leave them unstaged.
+
 Act as a recruiter and positioning editor, not a keyword formatter. Keep fit analysis, gaps, limitations, risks, role level, value proposition, and traceability private. Public copy contains only supported, scope-matched claims. Never use negative gap language, apologies, “without…”, “no experience…”, weakness explanations, empty claims, or first person. Omission is not permission to imply competence or seniority.
 
 Align the overall title to the vacancy only when evidence supports its scope and level; a target title never overrides canonical evidence or asserts unsupported specialization, seniority, or responsibility. Use hierarchy, reverse chronology, action verbs, accomplishment-based prose, natural ATS terms, and consistent punctuation. Trace every material claim to evidence, including scope, ownership, depth, dates, recency, provenance, limitations, and confidence.
@@ -37,9 +39,10 @@ For material ambiguity, use native `question` (one grouped interaction for relat
 3. Draft the evidence-aligned title, exact two-sentence 45–70-word profile with line goal, reverse-chronological experience, 5–7 bullets per role by default, confirmed-field Education & Certifications, and grouped skills. Check factuality, ATS context, boundaries, and parity.
 4. Enforce human readiness and two pages. After edit approval, project both languages; persist only with explicit authorization.
 5. Build, inspect page count and `pdftotext`, and run repository validation.
+6. Commit only the CV content files modified in this run (explicit paths, conventional message describing the content change) so later iterations diff against prior content; never stage unrelated changes.
 
 ## Output Contract
-Return: status; requirement matrix; questions/answers; value proposition; ranked selections; omissions/pruning; claim traceability; private fit/gaps; readiness findings/resolutions; template and boundary compliance; approval; files and memory status; projections and bilingual parity; build, page count, `pdftotext`, repository validation; variants; overflow.
+Return: status; requirement matrix; questions/answers; value proposition; ranked selections; omissions/pruning; claim traceability; private fit/gaps; readiness findings/resolutions; template and boundary compliance; approval; files and memory status; projections and bilingual parity; build, page count, `pdftotext`, repository validation; commit hash for the CV content changes; variants; overflow.
 
 ## References
 - `../../../data/cv-memory.json` — canonical candidate evidence.
